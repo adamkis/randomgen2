@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'RandomNumbers' /}
+
+	<h3>Random Number Store</h3>
+	
+	<h1>
+		<a href="@{Application.flush()}">Flush</a>
+	</h1>
+	
+	<h1>
+		<a href="@{Application.random()}">Add number</a>
+	</h1>
+
+	#{if numbers.size() > 0}
+	<div>  		
+		#{list items:numbers, as:'randomNumber'}
+			<div>
+					<h2>${randomNumber.value}</h2>                    
+			</div>
+		#{/list}
+	</div>			
+	#{/if}
+
+        
